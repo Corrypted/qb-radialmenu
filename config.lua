@@ -575,6 +575,13 @@ Config.JobInteractions = {
             event = 'police:client:SendPoliceEmergencyAlert',
             shouldClose = true
         }, {
+            id = 'pdunlock',
+            title = 'Force Unlock',
+            icon = 'unlock',
+            type = 'client',
+            event = 'police:client:hijack',
+            shouldClose = true
+        }, {
             id = 'impoundrequest',
             title = 'Impound Request',
             icon = 'lock',
