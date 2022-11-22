@@ -381,6 +381,17 @@ RegisterNetEvent('qb-radialmenu:flipVehicle', function()
     end)
 end)
 
+-- IMPOUND REQUEST - Corry
+RegisterNetEvent('qb-radialmenu:impoundRequest', function()
+    TriggerEvent('animations:client:EmoteCommandStart', {"mechanic"})
+    local vehicle = getNearestVeh()
+    TriggerEvent("police:client:ImpoundVehicle", src, false, 0)
+    TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+    end, function()
+    QBCore.Functions.Notify(Lang:t("Cancelled"), "error")
+    TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+    end)
+
 -- NUI Callbacks
 
 RegisterNUICallback('closeRadial', function(data, cb)

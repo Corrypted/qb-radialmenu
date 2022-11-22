@@ -575,6 +575,13 @@ Config.JobInteractions = {
             event = 'police:client:SendPoliceEmergencyAlert',
             shouldClose = true
         }, {
+            id = 'impoundrequest',
+            title = 'Impound Request',
+            icon = 'lock',
+            type = 'client',
+            event = 'qb-radialmenu:impoundRequest',
+            shouldClose = true,
+        }, {
             id = 'checkvehstatus',
             title = 'Check Tune Status',
             icon = 'circle-info',
