@@ -14,7 +14,7 @@ RegisterNetEvent('police:client:hijack', function()
     
     if #(copcoords - vehiclepos) < 3.0 then
         if GetVehicleDoorLockStatus(vehicle) == 0 then QBCore.Functions.Notify("This vehicle doesn't seem to be locked.", "error") return end
-        if PlayerJob.name == 'police' then
+        if PlayerJob.type == 'leo' then
             TriggerEvent('animations:client:EmoteCommandStart', {"weld"})
             QBCore.Functions.Progressbar("policeunlock", "Unlocking vehicle..", 5000, false, false, {
                 disableMovement = true,
@@ -46,7 +46,7 @@ end)
 QBCore.Commands.Add("pdunlock", "Unlock closest vehicle (PD)", {}, false, function(source)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-    if Player.PlayerData.job.name == "police" then
+    if Player.PlayerData.job.type == "leo" then
         TriggerClientEvent("police:client:hijack", src)
     else
         TriggerClientEvent('QBCore:Notify', src, "PD Only", 'error')
